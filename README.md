@@ -1,7 +1,14 @@
 #  ✨ _**Interactive front-end web application**_ ✨
 
-#### Hello I am Elicia! For my Second Assignment, I would be creating a front-end web application for youngsters to be able to scout out for Bubble Tea, ATM Machienes, Cafes as well as Study spots in Singapore. Hope you will like it! 😎
+#### Hello I am Elicia! For my Second Assignment, I would be creating a front-end web application to practice my HTML, CSS, JS, JQuery and API coding. Sit back and enjoy! 😎
 
+### APP NAME 
+* **What is my App About?**
+  APPNAME is a web-application that is suppose to mock an app interface. Where people are able to use the app to satisfy their bubble tea cravings, find their favourite cafe spots, look out for ATM machiences if short of cash and finally APPNAME helps to find study spots all around Singapore. 
+* **That sounds quite lame... is there any other features?**
+  YES! APPNAME will also be a social media platform where users will be able to use APPNAME to find friends, make friends, message friends and collect stars to compete with each other on a leaderboard. 
+* **Target users?** 
+  APPNAME is targeted towards "youngsters" also known as Millennials and Gen-Z. Of course this does not mean that the other older genrated are not able to join in this app. Those with a young heart are always free to join in as well!
 ## _**Design Process**_: 🎨
 
 *  As a programmer, I want to create a mobile app, so that I can be recognised by potential clients in the future. 
