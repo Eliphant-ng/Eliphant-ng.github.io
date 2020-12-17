@@ -51,7 +51,7 @@
 ## _**Testing**_: 🤔
 
 * For Mobile: 📱
-* [ ]Flexbox
+* [ ] Flexbox
 ## _**Credits**_: 🤗
 Inspiration:
 * [Google API Basics](https://www.youtube.com/watch?v=Zxf1mnP5zcw)
