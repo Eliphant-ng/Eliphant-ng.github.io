@@ -1,6 +1,6 @@
 #  ✨ _**Interactive front-end web application**_ ✨
 
-#### Hello I am Elicia! For my second Assignment, I would be creating a front-end web application for youngsters to be able to scout out for Bubble Tea, ATM Machienes, Cafes as well as Study spots in Singapore. Hope you will like it! 😎
+#### Hello I am Elicia! For my Second Assignment, I would be creating a front-end web application for youngsters to be able to scout out for Bubble Tea, ATM Machienes, Cafes as well as Study spots in Singapore. Hope you will like it! 😎
 
 ## _**Design Process**_: 🎨
 
@@ -55,6 +55,7 @@
 ## _**Credits**_: 🤗
 Inspiration:
 * [Google API Basics](https://www.youtube.com/watch?v=Zxf1mnP5zcw)
+* [Sidebar Bootstrap Menu](https://www.youtube.com/watch?v=tWpXoi17oXk)
 
 
 ## _**Code**_: 
