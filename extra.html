@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="dialog">
+    <div>Your latitude is: <span id="lat"></span></div>
+    <div>Your longitude is: <span id="lon"></span></div>
+    <div>Last Updated: <small id="last_updated"></small></div>
+</div>
+    <script>
+        window.onload = function () {
+    var latElement = document.getElementById("lat"),
+        lonElement = document.getElementById("lon"),
+        lastUpdatedElement = document.getElementById("last_updated"),
+        getPositionOptions = {
+            enableHighAccuracy: false,
+            timeout: 10000,
+            maximumAge: 0
+        },
+        getPos = function () {
+            console.log("getPos function called");
+            navigator.geolocation.getCurrentPosition(function (position) {
+                console.log("Successfully retrieved position: ", position);
+                var coords = position.coords;
+
+                latElement.innerHTML = coords.latitude;
+                lonElement.innerHTML = coords.longitude;
+
+                lastUpdatedElement.innerHTML = new Date(position.timestamp);
+                setTimeout(getPos, 5000);
+            }, function (error) {
+                console.log("Something went wrong retrieving position: ", error);
+                setTimeout(getPos, 5000);
+            }, getPositionOptions);
+        };
+
+    getPos();
+};
+
+console.log(latElement,lonElement)
+    </script>
+  </body>
+</html>
