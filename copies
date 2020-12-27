@@ -1,75 +1,103 @@
- <style>
-            #map{
-                height: 400px;
-                width: 100%;
-            }
-        </style>
- <div id ="map"></div>
+<div class="wrapper">
 
-    <script>
-        function initMap(){
-            // map options 
-            var options = {
-                zoom: 12,
-                center: {lat:1.352083, lng:103.819839}
-            }
+    <nav id="sidebar">
 
-            // New map
-            var map = new 
-            google.maps.Map(document.getElementById('map'), options);
+        <div class="sidebar-header">
+            <h3>appname</h3>
+        </div>
+        <ul class="lisst-unstyled components">
+            <h2>Where to?</h2>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <ul class="collapse lisst-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li>
+                        <a href="findfriends.html">Find Friends</a>
+                    </li>
+                    <li>
+                        <a href="message.html">Messages</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#bubbleTeaMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bubble Tea</a>
+                <ul class="collapse lisst-unstyled" id="bubbleTeaMenu">
+                    <li>
+                        <a href="bubbletea.html">all</a>
+                    </li>
+                    <li>
+                        <a href="bubbletea.html">brands</a>
+                    </li>
+                    <li>
+                        <a href="bubbletea.html">near me</a>
+                    </li>
+                </ul>
+            </li>
 
-            // Listen for click on map
-            google.maps.event.addListener(map, 'click', function(event){
-                //Add Marker
-                addMarker({coords:event.latLng});
-            });
+            </li>
+            <li>
+                <a href="#atmMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ATM</a>
+                <ul class="collapse lisst-unstyled" id="atmMenu">
+                    <li>
+                        <a href="atm.html">all</a>
+                    </li>
+                    <li>
+                        <a href="atm.html">brands</a>
+                    </li>
+                    <li>
+                        <a href="atm.html">near me</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#cafeMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Cafes</a>
+                <ul class="collapse lisst-unstyled" id="cafeMenu">
+                    <li>
+                        <a href="cafe.html">all</a>
+                    </li>
+                    <li>
+                        <a href="cafe.html">brands</a>
+                    </li>
+                    <li>
+                        <a href="cafe.html">near me</a>
+                    </li>
+                </ul>
+            </li>
 
+            </li>
+            <li>
+                <a href="#studyMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Study Spots</a>
+                <ul class="collapse lisst-unstyled" id="studyMenu">
+                    <li>
+                        <a href="study.html">all</a>
+                    </li>
+                    <li>
+                        <a href="study.html">brands</a>
+                    </li>
+                    <li>
+                        <a href="study.html">near me</a>
+                    </li>
+                </ul>
+            </li>
 
-            // Array of Makrers
-            var markers = [{
-                coords:{lat:1.2494, lng:103.8303},
-                iconImage:'/png file/bubble star.png',
-                content:'<h1>Sentosa<h1>'
-            },
-            {
-                coords:{lat:1.375165166, lng:103.75749697},
-                content:'<h1>Bukit Panjang<h1>'
-            }
-        ];
-        
-            // Loop through markers
-            for(var i = 0; i , markers.length; i++){
-                addMarker(markers[i]);
-            }
-
-    
-
-           // Add Marker Function
-           function addMarker(props){
-            var marker = new google.maps.Marker({
-                position:props.coords,
-                map:map,
-                //icon:props.iconImage
-            });
+            </li>
             
-            // Check for Custom Icon
-            if(props.iconImage){
-                // Set icon image
-                marker.setIcon(props.iconImage);
-            }
+        </ul>
+    </nav>
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+    </div>
 
-            // Check content
-            if(props.content){
-                var infoWindow = new google.maps.InfoWindow({
-                    content: props.content
-                });
-                
-                marker.addListener('click', function(){
-                    infoWindow.open(map, marker);
-                });
-            }
-           }
-        }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArVX2Pdi9UKawedXyJ8UBAJxU7QPCFFxw&callback=initMap">
-    </script>
+
+
+
+</div>

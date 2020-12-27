@@ -1,17 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html class="loginpage">
   <head>
     <title>Local Context Styles</title>
     <link rel = "stylesheet" href="teststyle.css" >
-    <script src="test.js"></script>
+  </head>
+  <style>
+     html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+  </style>
+  <body>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/place/findplacefromtext/output?parameters"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArVX2Pdi9UKawedXyJ8UBAJxU7QPCFFxw&callback=initMap&libraries=localContext&v=beta"
       defer
     ></script>
-  </head>
-  <body>
     <div id="map"></div>
+    <div class="popup center">
+      <div class="icon">
+        <img src="png file/star.png">
+      </div>
+      <div class="title">
+        CONGRATS!!
+      </div> 
+      <div class="description">
+        You have earned 1 star for completing your journey.
+      </div>
+      <div class="dismiss-btn">
+        <button id="dismiss-popup-btn">
+          Dismiss
+        </button>
+      </div>
+    </div>
+    <div class="center">
+      <button id="open-popup-btn">
+        Finish
+      </button>
+    </div>
+    <script src="test.js"></script>
   </body>
 </html>
 
