@@ -35,6 +35,8 @@ body, input {
             <input id="input-password" type="password" placeholder="Password" />
           </div>
           <input id="signin" type="submit" value="Login" class="btn solid" />
+          <a class="forgot" href="forgot.html">FORGOT PASSWORD?</a>
+          <div id="error"></div>
 
 
         </form>
@@ -53,7 +55,6 @@ body, input {
             <input id="password" type="password" placeholder="Password" />
           </div>
           <input id="signup" type="submit" class="btn" value="Sign up"/>
-
         </form>
       </div>
     </div>
@@ -86,43 +87,50 @@ body, input {
     </div>
   </div>
   <script>
-// SAVING DATA: 
-let usernames = [];
+  // SAVING DATA: 
 
-const addUsername = (ev)=>{
-  ev.preventDefault(); // to stop the form from submitting 
-  let username = {
-    id: Date.now(),
-    name: document.getElementById('user').value,
-    email: document.getElementById('email').value,
-    password: document.getElementById('password').value
+  function addUsername() {
+    
+    var name = localStorage.setItem("name", document.getElementById("user").value);
+    var email = localStorage.setItem("email", document.getElementById("email").value);
+    var password = localStorage.setItem("password", document.getElementById("password").value);
+
   }
-  usernames.push(username);
-  document.forms[0].reset(); //to clear the next few entries
 
-  // for display purpose only: 
-  console.warn('added',{usernames});
-  let pre = document.querySelector('#msg pre');
-  pre.textContent = '/n' + JSON.stringify(usernames, '\t', 2);
+  document.addEventListener('DOMContentLoaded', ()=>{
+  document.getElementById("signup").addEventListener("click",addUsername);
 
-  //saving to localStorage
-}
-document.addEventListener('DOMContentLoaded', ()=>{
-document.getElementById("signup").addEventListener("click",addUsername);
-});
+  });
 
-signin.addEventListener("click", passChecker);
+  // RETRIVING DATA:
 
-function passChecker(){
-  if ((input-user === usernames.name) && (input-password === usernames.password)){
-    window.location.replace = "http://www.w3schools.com"
+  function input(){
+    var checkName = localStorage.setItem("checkName", document.getElementById("input-user").value);
+    var checkPassword = localStorage.setItem("checkPassword", document.getElementById("input-password").value);
   }
-}
 
-  
+  function checker(){
+    if (localStorage.getItem("checkName") === localStorage.getItem("name") && localStorage.getItem("checkPassword") === localStorage.getItem("password") ){
+      console.log("true");
+      window.location.href="index.html";
 
+    }
 
+    else{
+      console.log("false");
+      document.getElementById("error").innerHTML = "Password Incorrect."
+      
+    }
+  }
 
+  document.addEventListener('DOMContentLoaded', ()=>{
+  document.getElementById("signin").addEventListener("click",function(event){
+    event.preventDefault()
+  });
+  document.getElementById("signin").addEventListener("click",input);
+  document.getElementById("signin").addEventListener("click",checker);
+
+  });
   </script>
   <script src="login.js"></script>
 </body>

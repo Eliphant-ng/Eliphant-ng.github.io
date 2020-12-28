@@ -2,37 +2,87 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forgot Page</title>
 <link rel = "stylesheet" href="normalize.css" >
-<link rel = "stylesheet" href="style.css" >
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/
-Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+<link rel = "stylesheet" href="teststyle.css" >
+<script src="https://kit.fontawesome.com/64d58efce2.js">
+  crossorigin="anonymous"
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv
-3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLE
-Hfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-</script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="script.js"></script>
 </head>
+<style>
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body, input {
+  font-family: 'Poppins', 'sans-serif';
+}
+
+</style>
 <body>
-<div class="form signup">
-    <div class="form-header">
-        
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form class="sign-in-form">
+          <h2 class="title">Reset Password</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input id="forgot-user" type="text" placeholder="Username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input id="new-password" type="password" placeholder="New Password" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input id="confirm-password" type="password" placeholder="Confirm New Password" />
+          </div>
+          <a href="login.html"><input id="back" type="submit" value="Home" class="btn solid" />
+          </a> 
+          <div id="error"></div>
+        </form>
+      </div>
     </div>
-</div>
+  </div>
+  <script>
+
+    // Saving New Data:
+    var name = localStorage.setItem("name", document.getElementById("forgot-user").value);
+    var newPassword = localStorage.setItem("newPassword", document.getElementById("new-password").value);
+    var confirm = localStorage.setItem("confirm", document.getElementById("confirm-password").value);
+
+    function refresh() {
+        location.reload();
+    }
+
+    function check(){
+        if (localStorage.getItem("newPassword") === localStorage.getItem("confirm")){
+            console.log("true");
+            resets();
+            window.location.href="login.html";
+        }
+        else {
+            console.log("false");
+            document.getElementById("error").innerHTML = "New Password and Confirm New Password do not match."
+            document.getElementById("back").addEventListener("click",refresh);
+        }
+    }
+        function resets() {
+        
+            var name = localStorage.setItem("name", document.getElementById("forgot-user").value);
+            var password = localStorage.setItem("password", document.getElementById("new-password").value);
+            var confirm = localStorage.setItem("confirm", document.getElementById("confirm-password").value);
+        
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById("back").addEventListener("click",function(event){
+                event.preventDefault()
+            });
+            document.getElementById("back").addEventListener("click",check);
+        });
 
 
+  </script>
 </body>
 </html>
