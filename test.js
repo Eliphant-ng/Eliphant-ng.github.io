@@ -1,22 +1,44 @@
 // get user's location: 
-const sucessCallBack = (position) => {
-    console.log(position);
-};
+var x = document.getElementById("demo");
 
-const errorCallBack = (error) => {
-    console.error(error);
-};
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
 
-navigator.geolocation.getCurrentPosition(sucessCallBack,errorCallBack);
+function showPosition(position) {
 
-console.log(sucessCallBack);
+  var lat = localStorage.setItem("lat", position.coords.latitude);
+  var log = localStorage.setItem("log", position.coords.longitude);
+}
+
 
 let map;
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+
+  var lat = localStorage.setItem("lat", position.coords.latitude);
+  var log = localStorage.setItem("log", position.coords.longitude);
+}
 
 function initMap() {
-  const center = { lat: 1.3521, lng: 103.8198 };
 
-  const localContextMapView = new google.maps.localContext.LocalContextMapView(
+ var center;
+ center = { lat: 1.3521, lng: 103.8198 };
+
+  localContextMapView = new google.maps.localContext.LocalContextMapView(
     {
       element: document.getElementById("map"),
       placeTypePreferences: ["atm"],
@@ -24,6 +46,7 @@ function initMap() {
       directionsOptions: { origin: center },
     }
   );
+
   map = localContextMapView.map;
   new google.maps.Marker({ position: center, map: map });
   map.setOptions({
@@ -42,16 +65,6 @@ document.getElementById("dismiss-popup-btn").addEventListener("click",function()
 });
 
 
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
-const container = document.querySelector(".container");
-
-sign_up_btn.addEventListener("click", () => {
-  container.classList.add("sign-up-mode");
-});
-sign_in_btn.addEventListener("click", () => {
-  container.classList.add("sign-in-mode");
-});
 
 
   
