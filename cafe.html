@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="loginpage">
+  <head>
+    <title>Local Context Styles</title>
+    <link rel = "stylesheet" href="teststyle.css" >
+  </head>
+  <style>
+     html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+  </style>
+  <body>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArVX2Pdi9UKawedXyJ8UBAJxU7QPCFFxw&callback=initMap&libraries=localContext&v=beta"
+      defer
+    ></script>
+
+    
+    <p id="demo"></p>
+    <div id="map"></div>
+    <div class="popup center">
+      <div class="icon">
+        <img src="png file/star.png">
+      </div>
+      <div class="title">
+        CONGRATS!!
+      </div> 
+      <div class="description">
+        You have earned 1 star for completing your journey.
+      </div>
+      <div class="dismiss-btn">
+        <button id="dismiss-popup-btn">
+          Dismiss
+        </button>
+      </div>
+    </div>
+    <div class="center">
+      <button id="open-popup-btn">
+        Finish
+      </button>
+    </div>
+    <script src="test.js"></script>
+    <script>
+        function initMap() {
+
+localContextMapView = new google.maps.localContext.LocalContextMapView(
+  {
+    element: document.getElementById("map"),
+    placeTypePreferences: ["cafe"],
+    maxPlaceCount: 12,
+    directionsOptions: { origin: center },
+  }
+);
+
+map = localContextMapView.map;
+new google.maps.Marker({ position: center, map: map });
+map.setOptions({
+  center: center,
+  zoom: 16,
+});
+}
+    </script>
+  </body>
+</html>

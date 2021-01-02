@@ -1,59 +1,23 @@
+
 // get user's location: 
-var x = document.getElementById("demo");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+sucessCallback = (position) => {
+  var latitude = localStorage.setItem("latitude", position.coords.latitude);
+  var longitude = localStorage.setItem("longitude", position.coords.longitude);
 }
 
-function showPosition(position) {
-
-  var lat = localStorage.setItem("lat", position.coords.latitude);
-  var log = localStorage.setItem("log", position.coords.longitude);
+errorCallback = (error) => {
+  console.log(error);
 }
 
+navigator.geolocation.getCurrentPosition(sucessCallback, errorCallback);
 
+let latitude = parseFloat(localStorage.getItem("latitude"));
+let longitude = parseFloat(localStorage.getItem("longitude"));
+
+// get map: 
 let map;
-var x = document.getElementById("demo");
+center = {lat: latitude,lng:longitude};
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-
-  var lat = localStorage.setItem("lat", position.coords.latitude);
-  var log = localStorage.setItem("log", position.coords.longitude);
-}
-
-function initMap() {
-
- var center;
- center = { lat: 1.3521, lng: 103.8198 };
-
-  localContextMapView = new google.maps.localContext.LocalContextMapView(
-    {
-      element: document.getElementById("map"),
-      placeTypePreferences: ["atm"],
-      maxPlaceCount: 12,
-      directionsOptions: { origin: center },
-    }
-  );
-
-  map = localContextMapView.map;
-  new google.maps.Marker({ position: center, map: map });
-  map.setOptions({
-    center: center,
-    zoom: 16,
-  });
-}
 
 // pop up button
 document.getElementById("open-popup-btn").addEventListener("click",function(){
@@ -64,6 +28,18 @@ document.getElementById("dismiss-popup-btn").addEventListener("click",function()
   document.getElementsByClassName("popup")[0].classList.remove("active");
 });
 
+var starCounter = 0
+function addStar(){
+  starCounter += 10;
+}
+document.getElementById("open-popup-btn").addEventListener("click",function(){
+  addStar();
+});
+
+document.getElementById("dismiss-popup-btn").addEventListener("click",function(){
+
+window.location.href="profile.html"
+});
 
 
 

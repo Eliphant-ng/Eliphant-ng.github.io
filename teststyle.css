@@ -15,9 +15,9 @@
       /* pop up button */
       .center {
         position: absolute;
-        top: 110%;
+        top: 115%;
         left: 50%;
-        padding: 5px;
+        padding-bottom: 5px;
         transform: translate(-50%,-50%);
       }
       #open-popup-btn{
@@ -496,3 +496,25 @@
           left: 50%;
         }
       }
+  
+
+
+.progress{
+  background-color: #d8d8d8;
+  border-radius: 20px;
+  height: 30px;
+  width: 300px;
+}
+.progress-done{
+  color: #fff;
+  background: linear-gradient(to left, #F2709C, #FF9472);
+  box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  height: 100%;
+  width: 0px;
+  transition: 1s ease;
+}
