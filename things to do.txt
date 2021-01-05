@@ -1,0 +1,20 @@
+messaging api: create a form input 
+store information using teacher's example 
+get information and post in o the screen 
+
+message 
+id 
+name
+
+find friend: 
+send a notification: send location (location coords sent to friend) 
+the friend now has his own lat lng and the friends lat long. click on a button accept, his lat 
+long sent back to the friend. Go. both markers appear on the app and the users can now find each other. 
+can store the datain the same api as the messaging api 
+
+leaderboard: 
+set lat lng for eg: 5 locations or 3 locations. Users have to walk around the locations. IF they manage
+to reach the lat lng, message appears, one checkpoint cleared. add a timestamp or a timer. once completed 
+the timer stops. compete with friends. (misson complete) + 1 star. 
+if 10 missions reached, get a badge. 
+
