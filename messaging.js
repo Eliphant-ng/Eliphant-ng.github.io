@@ -13,16 +13,26 @@
   firebase.initializeApp(firebaseConfig);
 
 
+  
   var myName = localStorage.getItem("name");
   function sendMessage(){
     //get message
     var message = document.getElementById("message").value;
     
+    $(document).ready(function(){
+        $("#find-friends").click(function(){
+            var r= $('<input type="button" value="new button"/>');
+            $("body").append(r);
+        });
+    });
+
+
     //save in database
     firebase.database().ref("messages").push().set({
       "sender": myName,
       "message": message,
-  
+      
+     
     });
 
     // prevent form from submitting 
@@ -60,6 +70,41 @@
     // remove message node 
     document.getElementById("message-" + snapshot.key).innerHTML = "This message has been deleted.";
   });
+
+
+
+  firebase.database().ref("findFriend").on("child_added", function (snapshot){
+    var html = "";
+    // give each message a unique ID
+    html += "<li id='find-friends-" + snapshot.key + "'>";
+      // show delete button if message is sent by me
+      if (snapshot.val().sender == myName){
+        html += "<button data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>"
+          ;
+          html += "Delete";
+        html += "</button>";
+      }
+      html += snapshot.val().sender + ": " + snapshot.val().message;
+    html += "</li>";
+
+    document.getElementById("find-friends").innerHTML += html;
+  });
+
+  function deleteMessage(self){
+    // get message ID
+    var messageId = self.getAttribute("data-id");
+
+    // delete message 
+    firebase.database().ref("find-friends").child(messageId).remove();
+  }
+
+  // attach listener for deleted message 
+  firebase.database().ref("find-friends").on("child_removed", function (snapshot){
+    // remove message node 
+    document.getElementById("find-friends-" + snapshot.key).innerHTML = "This message has been deleted.";
+  });
+
+
 
   function getLocation(){
   latitude = parseFloat(localStorage.getItem("latitude"));

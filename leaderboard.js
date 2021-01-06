@@ -111,8 +111,8 @@ console.log(error);
 
 navigator.geolocation.getCurrentPosition(sucessCallback, errorCallback);
 
-let latitude = parseFloat(localStorage.getItem("latitude"));
-let longitude = parseFloat(localStorage.getItem("longitude"));
+let latitude = 1.3328;
+let longitude = 103.7433;
 
 // set lat lng for 3 locations:
 
@@ -231,7 +231,7 @@ $("#east").on("click", ()=>{
 });
 
 // WEST side game: 
-var west_checkpoint = 0;
+var west_checkpoint = 3;
 
 localStorage.setItem("west_checkpoint",west_checkpoint);
 $("#west").on("click", ()=>{
@@ -275,7 +275,7 @@ $("#west").on("click", ()=>{
           });
     }
     
-    if (west_checkpoint == 3){ 
+    if (west_checkpoint >= 3){ 
 
         swal("Good job!", "WEST MISSION COMPLETE!", "success");
 
