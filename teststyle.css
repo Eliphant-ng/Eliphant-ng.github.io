@@ -521,3 +521,14 @@
   transition: 1s ease;
 }
 
+/* stopwatch css */
+#display{
+  width: 100%;
+  font-size: 72px;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.stopwatch-buttons{
+  text-align: center;
+}
