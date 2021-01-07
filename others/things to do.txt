@@ -18,3 +18,5 @@ to reach the lat lng, message appears, one checkpoint cleared. add a timestamp o
 the timer stops. compete with friends. (misson complete) + 1 star. 
 if 10 missions reached, get a badge. 
 
+if user reach coorect lat lng -> 1 location spotted! tasks complete += 1 , if all 3 finished -> 
+mission complete! Badge += 1, time stop. If timing > rest , top of leaderboard. 

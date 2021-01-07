@@ -36,7 +36,6 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-
   
   var myName = localStorage.getItem("name");
   function sendMessage(){
@@ -78,6 +77,7 @@
     html += "</li>";
 
     document.getElementById("messages").innerHTML += html;
+
   });
 
   function deleteMessage(self){
@@ -97,11 +97,12 @@
   function friendMessage(self){
     // get message ID
     var messageId = self.getAttribute("data-id");
-    firebase.database().ref("messages").child(messageId);
+ 
   }
 
-$(document).ready(function(){
-    $("#find-friends").click(function(){
+
+  function find(){
+
         firebase.database().ref("messages").on("child_added", function (snapshot){
             var html = "";
             // give each message a unique ID
@@ -111,11 +112,8 @@ $(document).ready(function(){
                   ;
                   html += "Find";
                 html += "</button>";
+                html += "</li>";
 
-        
             document.getElementById("messages").innerHTML += html;
           });
-    });
-});
-
-
+    }

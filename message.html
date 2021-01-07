@@ -5,26 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messaging Form </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel= "stylesheet" href= "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+    crossorigin="anonymous">
+    <link rel = "stylesheet" href="teststyle.css" >
 
 
 </head>
 
 <body>
-<!-- create a form to send message -->
-<form onsubmit="return sendMessage();">
-  <input id="message" placeholder="Write something..."  autocomplete="off">
+<div class="messagebox">
+  <div id="chat-room">Sweet Tea</div>
+  <div id="textbox">
+    <!-- create a form to send message -->
+    <form onsubmit="return sendMessage();">
+      <input id="message" placeholder="Write something..."  autocomplete="off">
+      <div class="send-button">
+        <button id="send"><i id="paper-plane" class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+      </div>
+    <!-- <input id="find-friends" type="button" value="FIND FRIENDS" onclick="find()" > -->
+    </form>
+  </div>
 
-  <input type="submit" value="send">
-  <input id="find-friends" type="button" value="FIND FRIENDS">
-</form>
-
-<!-- create a list -->
-<ul id="messages"></ul>
-<tbody id="userLocationContent">             
-</tbody>
+  <!-- create a list -->
+  <div class="messages">
+    <ul id="messages"></ul>
+    <tbody id="userLocationContent">             
+    </tbody>
+  </div>
+</div>
 
 
 

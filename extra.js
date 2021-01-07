@@ -1,52 +1,81 @@
-const client = new StreamChat("qk4nn7rpcn75");
+const chatForm = document.getElementById('chat-form');
+const chatMessages = document.querySelector('.chat-messages');
+const roomName = document.getElementById('room-name');
+const userList = document.getElementById('users');
 
-await client.setUser({
-  id: "jon-snow",
-  name: "Jon Snow",
-  image: "https://bit.ly/2u9Vc0r",
-}, token); // token generated server side
-
-return client;
-
-const channel = client.channel('messaging', 'the-small-council_TG3CY4pBg', {
-    name: "Private Chat About the Kingdom",
-    image: "https://bit.ly/2F3KEoM",
-    members: ["jon-snow"],
-    session: 8 // custom field, you can add as many as you want
-  });
-  
-  await channel.watch();
-  
-  return channel;
-
-  const message = await channel.sendMessage({
-    text: "Did you already see the trailer? https://www.youtube.com/watch?v=wA38GCX4Tb0",
-  });
-  
-  return message;
-
-  const messageId = "c5ff70e7-22a6-4944-9d11-94f48a1b9bfe";
-
-const reaction = await channel.sendReaction(messageId, {
-  type: "like"
+// Get username and room from URL
+const { username, room } = Qs.parse(location.search, {
+  ignoreQueryPrefix: true
 });
 
-return reaction;
+const socket = io();
 
-const parent = await channel.sendMessage({
-    text: 'Episode 1 just blew my mind!',
-  });
-  
-  const reply = await channel.sendMessage({
-    text: "Stop it, no spoilers please!",
-    parent_id: parent.message.id,
-    customField: 123, // custom field, you can add as many as you want
-  });
+// Join chatroom
+socket.emit('joinRoom', { username, room });
 
-  channel.on("message.new", event => {
-    logEvent(event);
-  });
+// Get room and users
+socket.on('roomUsers', ({ room, users }) => {
+  outputRoomName(room);
+  outputUsers(users);
+});
+
+// Message from server
+socket.on('message', message => {
+  console.log(message);
+  outputMessage(message);
+
+  // Scroll down
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+});
+
+// Message submit
+chatForm.addEventListener('submit', e => {
+  e.preventDefault();
+
+  // Get message text
+  let msg = e.target.elements.msg.value;
   
-  await channel.sendMessage({
-    text: "What is the medieval equivalent of tabs vs spaces?",
+  msg = msg.trim();
+  
+  if (!msg){
+    return false;
+  }
+
+  // Emit message to server
+  socket.emit('chatMessage', msg);
+
+  // Clear input
+  e.target.elements.msg.value = '';
+  e.target.elements.msg.focus();
+});
+
+// Output message to DOM
+function outputMessage(message) {
+  const div = document.createElement('div');
+  div.classList.add('message');
+  const p = document.createElement('p');
+  p.classList.add('meta');
+  p.innerText = message.username;
+  p.innerHTML += `<span>${message.time}</span>`;
+  div.appendChild(p);
+  const para = document.createElement('p');
+  para.classList.add('text');
+  para.innerText = message.text;
+  div.appendChild(para);
+  document.querySelector('.chat-messages').appendChild(div);
+}
+
+// Add room name to DOM
+function outputRoomName(room) {
+  roomName.innerText = room;
+}
+
+// Add users to DOM
+function outputUsers(users) {
+  userList.innerHTML = '';
+  users.forEach(user=>{
+    const li = document.createElement('li');
+    li.innerText = user.username;
+    userList.appendChild(li);
   });
+ }
