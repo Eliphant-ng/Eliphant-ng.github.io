@@ -111,148 +111,88 @@ console.log(error);
 
 navigator.geolocation.getCurrentPosition(sucessCallback, errorCallback);
 
-let latitude = 1.3328;
-let longitude = 103.7433;
+let latitude = parseFloat(localStorage.getItem("latitude"));
+let longitude = parseFloat(localStorage.getItem("longitude"));
+
 
 // set lat lng for 3 locations:
 
-// NORTH
+//NP
+const ict_lat = 1.3335634439818194;
+const ict_lng = 103.77522611761768;
 
-// Causeway point
-var causeway_lat = 1.4361;
-var causeway_lng = 103.7859;
-// Sembawang Hot Spring Park
-var spring_lat = 1.4343;
-var spring_lng = 103.8224;
-// Central Water Catchment
-var water_lat = 1.3552;
-var water_lng = 103.7972;
+const koufu_lat = 1.3323275726440327;
+const koufu_lng = 103.77446921770022;
+
+const acup_lat = 1.334005285569502;
+const acup_lng = 103.77640891739252;
+
+//TP
+const canopy_lat = 1.3456985585406471;
+const canopy_lng = 103.93224313260168;
+
+const library_lat = 1.3451030097392838;
+const library_lng = 103.93261363703729;
+
+const cheers_lat = 1.3441152699272814;
+const cheers_lng = 103.93324567402358;
+
+//SP
+const bucks_lat = 1.3096946986666518;
+const bucks_lng = 103.77711876838059;
+
+const macs_lat = 1.3100495525476865;
+const macs_lng = 103.77850628703439;
+
+const convention_lat = 1.3112302910626206;
+const convention_lng = 103.7778035480428;
+
+//RP
+const subway_lat = 1.4428025238291733;
+const subway_lng = 103.78558111053884;
+
+const swim_lat = 1.4460311690862429;
+const swim_lng = 103.78404170234862;
+
+const accom_lat = 1.44721020613597;
+const accom_lng = 103.78406570204999;
+
+//NYP
+const idm_lat = 1.3786165449676906;
+const idm_lng = 103.84993037012131;
+
+const bm_lat = 1.3810842078107275;
+const bm_lng = 103.8485061294325;
+
+const foodgle_lat = 1.3784844258460704;
+const foodgle_lng = 103.84895071503075;
 
 
-// SOUTH
 
-// Sentosa 
-var sentosa_lat = 1.2494;
-var sentosa_lng = 103.8303;
-// Newton hawker 
-var hawker_lat = 1.3120;
-var hawker_lng = 103.8396;
-// Orchard road 
-var orchard_lat = 1.304833;
-var orchard_lng = 103.831833;
+// NP game: 
 
-//EAST
+var np_checkpoint = 2;
 
-// jewel
-var jewel_lat = 1.3602;
-var jewel_lng = 103.9898;
-// Tampanies hub
-var tamp_lat = 1.3531;
-var tamp_lng = 103.9404;
-// SUTD
-var sutd_lat = 1.3;
-var sutd_lng = 103.7827;
+localStorage.setItem("np_checkpoint",np_checkpoint);
 
 
-//WEST
-
-// ite west
-var ite_lat = 1.3760;
-var ite_lng = 103.7529;
-// clementi mall 
-var clem_lat = 1.3149;
-var clem_lng = 103.7643;
-// jem
-var jem_lat = 1.3328;
-var jem_lng = 103.7433;
-
-
-// NORTH side game: 
-var north_checkpoint = 0
-localStorage.setItem("north_checkpoint",north_checkpoint);
-$("#north").on("click", ()=>{
-    var north = { 
-        causeway_lat, causeway_lng,
-        spring_lat, spring_lng,
-        water_lat, water_lng
+    var np = {
+        ict_lat, ict_lng,
+        koufu_lat, koufu_lng, 
+        acup_lat, acup_lng
     }
-    if (latitude == causeway_lat && longitude == causeway_lng){
-        north_checkpoint += 1
+    if (latitude == ict_lat && longitude == ict_lng){
+        np_checkpoint += 1
+        swal("Good job!", "You have reached School of ICT!", "success");
     }
-    if (latitude == spring_lat && longitude == spring_lng){
-        north_checkpoint += 1
+    if (latitude == koufu_lat && longitude == koufu_lng){
+        np_checkpoint += 1
+        swal("Good job!", "You have reached Makan Place!", "success");
     }
-    if (latitude == water_lat && longitude == water_lng){
-        north_checkpoint += 1
-    }
-    
-});
-    
-// SOUTH side game: 
-var south_checkpoint = 0
-localStorage.setItem("south_checkpoint",south_checkpoint);
-$("#south").on("click", ()=>{
-    var south = { 
-        sentosa_lat, sentosa_lng,
-        hawker_lat, hawker_lng,
-        orchard_lat, orchard_lng
-    }
-    if (latitude == sentosa_lat && longitude == sentosa_lng){
-        south_checkpoint += 1
-    }
-    if (latitude == hawker_lat && longitude == hawker_lng){
-        south_checkpoint += 1
-    }
-    if (latitude == orchard_lat && longitude == orchard_lng){
-        south_checkpoint += 1
-    }
-    
-});
-
-// EAST side game: 
-var east_checkpoint = 0
-localStorage.setItem("east_checkpoint",east_checkpoint);
-$("#east").on("click", ()=>{
-    var east = { 
-        jewel_lat, jewel_lng,
-        tamp_lat, tamp_lng,
-        sutd_lat, sutd_lng
-    }
-    if (latitude == jewel_lat && longitude == jewel_lng){
-        east_checkpoint += 1
-    }
-    if (latitude == tamp_lat && longitude == tamp_lng){
-        east_checkpoint += 1
-    }
-    if (latitude == sutd_lat && longitude == sutd_lng){
-        east_checkpoint += 1
-    }
-    
-});
-
-// WEST side game: 
-var west_checkpoint = 3;
-
-localStorage.setItem("west_checkpoint",west_checkpoint);
-$("#west").on("click", ()=>{
-
-    var west = {
-        ite_lat, ite_lng,
-        clem_lat, clem_lng, 
-        jem_lat, jem_lng
-    }
-    if (latitude == ite_lat && longitude == ite_lng){
-        west_checkpoint += 1
-        swal("Good job!", "You have reached ITE West!", "success");
-    }
-    if (latitude == clem_lat && longitude == clem_lng){
-        west_checkpoint += 1
-        swal("Good job!", "You have reached Clementi Mall!", "success");
-    }
-    if (latitude == jem_lat && longitude == jem_lng){
-        west_checkpoint += 1;
-        west_string =  String(west_checkpoint);
-        swal("Good Job! You have reached Clementi Mall! " + west_string + "/3" , {
+    if (latitude == 1.3792 && longitude == 103.7742){
+        np_checkpoint += 1;
+        np_string =  String(np_checkpoint);
+        swal("Good Job! You have reached Each a Cup! " + np_string + "/3" , {
             buttons: {
               cancel: "ok lorh",
               catch: {
@@ -275,13 +215,13 @@ $("#west").on("click", ()=>{
           });
     }
     
-    if (west_checkpoint >= 3){ 
-
-        swal("Good job!", "WEST MISSION COMPLETE!", "success");
+    if (np_checkpoint >= 3){ 
+        reset();
+        swal("Good job!", "NP MISSION COMPLETE!", "success");
 
     }
     
-});
+
 
 
 

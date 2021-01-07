@@ -17,18 +17,20 @@
 </head>
 
 <body>
-<div class="messagebox">
-  <div id="chat-room">Sweet Tea</div>
-  <div id="textbox">
-    <!-- create a form to send message -->
-    <form onsubmit="return sendMessage();">
-      <input id="message" placeholder="Write something..."  autocomplete="off">
-      <div class="send-button">
-        <button id="send"><i id="paper-plane" class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-      </div>
-    <!-- <input id="find-friends" type="button" value="FIND FRIENDS" onclick="find()" > -->
-    </form>
+<div class="container">
+  <div class="messagebox">
+    <div id="chat-room" class="row-col">Sweet Tea</div>
+      <!-- create a form to send message -->
+      <form onsubmit="return sendMessage();">
+        <input id="message" placeholder="Write something..."  autocomplete="off">
+        <div class="send-button">
+          <button id="send"><i id="paper-plane" class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+        </div>
+      <input id="find-friends" type="button" value="FIND FRIENDS" onclick="find()" > 
+      </form>
+    </div>
   </div>
+</div>
 
   <!-- create a list -->
   <div class="messages">
