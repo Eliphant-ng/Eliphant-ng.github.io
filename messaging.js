@@ -74,10 +74,14 @@ firebase.database().ref("messages").on("child_added", function (snapshot) {
     html += "</button>";
   }
 
+
  // making a button to find friends
+ // use proper class to listen for our jquery event listener
+ //use data attribute to store lat and lng
   if(snapshot.val().message == "FindFriend"){
     //show findfriend UI
-    html+= "<button data-lat.class='friend'='"+ snapshot.val().lat + "'>Friend wants to send you his location</button>"
+    html+= "<button class='friend' data-lat='"+ snapshot.val().lat + "' data-lng='"+ snapshot.val().lng 
+    + "'>Friend wants to send you his location</button>"
   }else{
     html += snapshot.val().sender + ": " + snapshot.val().message;
   }
@@ -123,14 +127,16 @@ $(document).ready(function () {
   var message = document.getElementById("message").value;
   var lat = latitude;
   var lng = longitude;
+
   //save in database
   firebase.database().ref("messages").push().set({
     "sender": myName,
-    "message": "FindFriend",
+    "message": "FindFriend",//whatever way to indicate this is findfriend so we can show findfriend interface button
     "lat": lat,
     "lng": lng,
 
   });
+
 
 
   // prevent form from submitting 
@@ -140,16 +146,27 @@ $(document).ready(function () {
 
 
 
-// accessing the path to the database
-$('messages').on('click','friend',function(){
-var firebaseRef = firebase.database().ref("messages");
-firebaseRef.once("value", function(snapshot){
-  var data = snapshot.val();
-  for(let i in data){
-    console.log(data[i]["lat"]);
-    console.log(data[i]["lng"]);
-  }
-  
-});
-});
+//use delegates
+//use a main container to listen for our class friend
+//prevent button default actions 
+$('#messages').on('click','.friend',function(e){
+  e.preventDefault();
+
+  console.log('button is clicked');
+
+  //retrieve the button data attribute value. which is our lat and lng 
+  let friendLat = $(this).data('lat');
+  let friendLng = $(this).data('lng');
+  console.log(`my friend lat is ${friendLat}`);
+  console.log(`my friend lng is ${friendLng}`);
+
+  localStorage.setItem("friendLat", friendLat);
+  localStorage.setItem("friendLng", friendLng);
+  window.location.href = "findfriends.html";
+
+
+  });
+
+
+
 
