@@ -171,7 +171,7 @@ const foodgle_lng = 103.84895071503075;
 
 // NP game: 
 
-var np_checkpoint = 2;
+var np_checkpoint = 1;
 
 localStorage.setItem("np_checkpoint",np_checkpoint);
 
@@ -189,7 +189,7 @@ localStorage.setItem("np_checkpoint",np_checkpoint);
         np_checkpoint += 1
         swal("Good job!", "You have reached Makan Place!", "success");
     }
-    if (latitude == 1.3792 && longitude == 103.7742){
+    if (1.37<= latitude <= 1.374 && 103.6<= longitude <= 103.77){
         np_checkpoint += 1;
         np_string =  String(np_checkpoint);
         swal("Good Job! You have reached Each a Cup! " + np_string + "/3" , {
@@ -216,12 +216,11 @@ localStorage.setItem("np_checkpoint",np_checkpoint);
     }
     
     if (np_checkpoint >= 3){ 
-        reset();
+
         swal("Good job!", "NP MISSION COMPLETE!", "success");
 
     }
     
-
 
 
 
