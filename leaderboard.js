@@ -118,14 +118,23 @@ let longitude = parseFloat(localStorage.getItem("longitude"));
 // set lat lng for 3 locations:
 
 //NP
-const ict_lat = 1.3335634439818194;
-const ict_lng = 103.77522611761768;
+const top_left_ict_lat = 1.3338;
+const top_left_ict_lng = 103.7745;
 
-const koufu_lat = 1.3323275726440327;
-const koufu_lng = 103.77446921770022;
+const top_right_ict_lat = 1.3336;
+const top_right_ict_lng = 103.7756;
 
-const acup_lat = 1.334005285569502;
-const acup_lng = 103.77640891739252;
+const bottom_left_ict_lat = 1.3335;
+const bottom_left_ict_lng = 103.7744;
+
+const bottom_right_ict_lat = 1.3333;
+const bottom_right_ict_lng = 103.7755;
+
+const makan_lat = 1.33221;
+const makan_lng = 103.77434;
+
+const acup_lat = 1.33380;
+const acup_lng = 103.7763;
 
 //TP
 const canopy_lat = 1.3456985585406471;
@@ -171,25 +180,19 @@ const foodgle_lng = 103.84895071503075;
 
 // NP game: 
 
-var np_checkpoint = 1;
+var np_checkpoint = 0;
 
 localStorage.setItem("np_checkpoint",np_checkpoint);
 
-
-    var np = {
-        ict_lat, ict_lng,
-        koufu_lat, koufu_lng, 
-        acup_lat, acup_lng
-    }
-    if (latitude == ict_lat && longitude == ict_lng){
+    if (latitude >= 1.3333  && latitude <= 1.3338 && longitude >= 103.7744  && longitude <= 103.7744 ){
         np_checkpoint += 1
         swal("Good job!", "You have reached School of ICT!", "success");
     }
-    if (latitude == koufu_lat && longitude == koufu_lng){
+    if (latitude == makan_lat && longitude == makan_lng){
         np_checkpoint += 1
         swal("Good job!", "You have reached Makan Place!", "success");
     }
-    if (1.37<= latitude <= 1.374 && 103.6<= longitude <= 103.77){
+    if (latitude == acup_lat && longitude == acup_lng){
         np_checkpoint += 1;
         np_string =  String(np_checkpoint);
         swal("Good Job! You have reached Each a Cup! " + np_string + "/3" , {
@@ -206,7 +209,7 @@ localStorage.setItem("np_checkpoint",np_checkpoint);
 
            
               case "catch":
-                swal("Nice!", "Timing: ", );
+                swal("Nice!" + "Jiayou jiayou !! dont become loser ah", );
                 break;
            
               default:
