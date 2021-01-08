@@ -1,27 +1,19 @@
 function initMap() {
-    const jem = { lat: 1.3328, lng: 103.7433 };
-    const clem  = { lat: 1.3149, lng: 103.7643 };
-    const ite = { lat: 1.3760, lng: 103.7433 };
+
+  let latitude = parseFloat(localStorage.getItem("latitude"));
+  let longitude = parseFloat(localStorage.getItem("longitude"));
  
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 12,
-      center: { lat: 1.3521 , lng: 103.8198},
+      center: {lat:latitude,lng:longitude},
     });
     new google.maps.Marker({
-      position: jem,
+      position: {lat:latitude,lng:longitude},
       map,
+      icon: "png file/person icon.png",
+      animation: google.maps.Animation.DROP
       
     });
-    new google.maps.Marker({
-        position: clem,
-        map,
-        
-      });
-      new google.maps.Marker({
-        position: ite,
-        map,
-        
-      });
 
   }
 

@@ -55,7 +55,7 @@ function stopWatch(){
     }
 
     //Display updated time values to user
-    document.getElementById("display").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
+    var timing = document.getElementById("display").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
 
 }
 
@@ -89,6 +89,7 @@ if(status =="stopped"){
         window.clearInterval(interval);
         document.getElementById("startStop").innerHTML = "Start";
         status = "stopped";
+        localStorage.setItem("timing",timing);
 
     }
 
@@ -118,23 +119,42 @@ let longitude = parseFloat(localStorage.getItem("longitude"));
 // set lat lng for 3 locations:
 
 //NP
-const top_left_ict_lat = 1.3338;
-const top_left_ict_lng = 103.7745;
+// const top_left_ict_lat = 1.3338;
+// const top_left_ict_lng = 103.7745;
 
-const top_right_ict_lat = 1.3336;
-const top_right_ict_lng = 103.7756;
+// const top_right_ict_lat = 1.3336;
+// const top_right_ict_lng = 103.7756;
 
-const bottom_left_ict_lat = 1.3335;
-const bottom_left_ict_lng = 103.7744;
+// const bottom_left_ict_lat = 1.3335;
+// const bottom_left_ict_lng = 103.7744;
 
-const bottom_right_ict_lat = 1.3333;
-const bottom_right_ict_lng = 103.7755;
+// const bottom_right_ict_lat = 1.3333;
+// const bottom_right_ict_lng = 103.7755;
 
-const makan_lat = 1.33221;
-const makan_lng = 103.77434;
+// const top_left_makan_lat = 1.3324446;
+// const top_left_makan_lng = 103.774059;
 
-const acup_lat = 1.33380;
-const acup_lng = 103.7763;
+// const top_right_makan_lat = 1.332314;
+// const top_right_makan_lng = 103.774778;
+
+// const bottom_left_makan_lat = 1.3319;
+// const bottom_left_makan_lng = 103.774;
+
+// const bottom_right_makan_lat = 1.331855;
+// const bottom_right_makan_lng = 103.774677;
+
+
+// const top_left_library_lat = 1.334;
+// const top_left_library_lng = 103.776;
+
+// const top_right_library_lat = 1.3339;
+// const top_right_library_lng = 103.7766;
+
+// const bottom_left_library_lat = 1.3338;
+// const bottom_left_library_lng = 103.776;
+
+// const bottom_right_library_lat = 1.3337;
+// const bottom_right_library_lng = 103.7765;
 
 //TP
 const canopy_lat = 1.3456985585406471;
@@ -180,22 +200,22 @@ const foodgle_lng = 103.84895071503075;
 
 // NP game: 
 
-var np_checkpoint = 0;
+var np_checkpoint = 2;
 
 localStorage.setItem("np_checkpoint",np_checkpoint);
 
-    if (latitude >= 1.3333  && latitude <= 1.3338 && longitude >= 103.7744  && longitude <= 103.7744 ){
+    if (latitude >= 1.3333  && latitude <= 1.3338 && longitude >= 103.7744  && longitude <= 103.7756 ){
         np_checkpoint += 1
         swal("Good job!", "You have reached School of ICT!", "success");
     }
-    if (latitude == makan_lat && longitude == makan_lng){
+    if (latitude >= 1.331855  && latitude <= 1.3324446 && longitude >= 103.774 && longitude <= 103.774778){
         np_checkpoint += 1
         swal("Good job!", "You have reached Makan Place!", "success");
     }
-    if (latitude == acup_lat && longitude == acup_lng){
+    if (latitude >= 1.3337  && latitude <= 1.3338 && longitude >= 103.776  && longitude <= 103.7766){
         np_checkpoint += 1;
         np_string =  String(np_checkpoint);
-        swal("Good Job! You have reached Each a Cup! " + np_string + "/3" , {
+        swal("Good Job! You have reached Lien Ying Chow Library! " + np_string + "/3" , {
             buttons: {
               cancel: "ok lorh",
               catch: {
@@ -219,8 +239,8 @@ localStorage.setItem("np_checkpoint",np_checkpoint);
     }
     
     if (np_checkpoint >= 3){ 
-
         swal("Good job!", "NP MISSION COMPLETE!", "success");
+        reset();
 
     }
     
