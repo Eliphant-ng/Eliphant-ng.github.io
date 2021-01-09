@@ -621,6 +621,26 @@ main{
   color: ghostwhite;
 }
 
+/* home page donut background */
+.donut {
+  animation: rotation 2s infinite linear;
+  padding: 84px;
+  margin-top: 45%;
+}
+.donut-text{
+  padding-top: 0%;
+  padding-left: 25px;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
 
 
 
