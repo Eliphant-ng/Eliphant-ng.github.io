@@ -1,3 +1,25 @@
+// show map and instructions: 
+function initMap() {
+    swal("NP Game Challenge!",
+   "Find the three hidden locations around campus! BE the FASTEST and OUTBEAT your friends! Remeber to press play to begin your challenge. Good Luck!!");
+    let latitude = parseFloat(localStorage.getItem("latitude"));
+    let longitude = parseFloat(localStorage.getItem("longitude"));
+   
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: {lat:latitude,lng:longitude},
+      });
+      new google.maps.Marker({
+        position: {lat:latitude,lng:longitude},
+        map,
+        icon: "png file/person icon.png",
+        animation: google.maps.Animation.DROP
+        
+      });
+  
+    }
+  
+
 //stopwatch 
 
 //Start time counter: 
@@ -139,87 +161,6 @@ navigator.geolocation.getCurrentPosition(sucessCallback, errorCallback);
 
 let latitude = parseFloat(localStorage.getItem("latitude"));
 let longitude = parseFloat(localStorage.getItem("longitude"));
-// set lat lng for 3 locations:
-
-//NP
-// const top_left_ict_lat = 1.3338;
-// const top_left_ict_lng = 103.7745;
-
-// const top_right_ict_lat = 1.3336;
-// const top_right_ict_lng = 103.7756;
-
-// const bottom_left_ict_lat = 1.3335;
-// const bottom_left_ict_lng = 103.7744;
-
-// const bottom_right_ict_lat = 1.3333;
-// const bottom_right_ict_lng = 103.7755;
-
-// const top_left_makan_lat = 1.3324446;
-// const top_left_makan_lng = 103.774059;
-
-// const top_right_makan_lat = 1.332314;
-// const top_right_makan_lng = 103.774778;
-
-// const bottom_left_makan_lat = 1.3319;
-// const bottom_left_makan_lng = 103.774;
-
-// const bottom_right_makan_lat = 1.331855;
-// const bottom_right_makan_lng = 103.774677;
-
-
-// const top_left_library_lat = 1.334;
-// const top_left_library_lng = 103.776;
-
-// const top_right_library_lat = 1.3339;
-// const top_right_library_lng = 103.7766;
-
-// const bottom_left_library_lat = 1.3338;
-// const bottom_left_library_lng = 103.776;
-
-// const bottom_right_library_lat = 1.3337;
-// const bottom_right_library_lng = 103.7765;
-
-//TP
-const canopy_lat = 1.3456985585406471;
-const canopy_lng = 103.93224313260168;
-
-const library_lat = 1.3451030097392838;
-const library_lng = 103.93261363703729;
-
-const cheers_lat = 1.3441152699272814;
-const cheers_lng = 103.93324567402358;
-
-//SP
-const bucks_lat = 1.3096946986666518;
-const bucks_lng = 103.77711876838059;
-
-const macs_lat = 1.3100495525476865;
-const macs_lng = 103.77850628703439;
-
-const convention_lat = 1.3112302910626206;
-const convention_lng = 103.7778035480428;
-
-//RP
-const subway_lat = 1.4428025238291733;
-const subway_lng = 103.78558111053884;
-
-const swim_lat = 1.4460311690862429;
-const swim_lng = 103.78404170234862;
-
-const accom_lat = 1.44721020613597;
-const accom_lng = 103.78406570204999;
-
-//NYP
-const idm_lat = 1.3786165449676906;
-const idm_lng = 103.84993037012131;
-
-const bm_lat = 1.3810842078107275;
-const bm_lng = 103.8485061294325;
-
-const foodgle_lat = 1.3784844258460704;
-const foodgle_lng = 103.84895071503075;
-
-
 
 // NP game: 
 
@@ -227,15 +168,15 @@ var np_checkpoint = 0;
 
 localStorage.setItem("np_checkpoint",np_checkpoint);
 
-    if (latitude >= 1.3333  && latitude <= 1.3338 && longitude >= 103.7744  && longitude <= 103.7756 ){
+    if (latitude >= 1.3771  && latitude <= 1.3777 && longitude >= 103.773  && longitude <= 103.774 ){
         np_checkpoint += 1
-        swal("Good job!", "You have reached School of ICT!", "success");
+        swal("Good job!", "You have reached the School of ICT!", "success");
     }
-    if (latitude >= 1.331855  && latitude <= 1.3324446 && longitude >= 103.774 && longitude <= 103.774778){
+    if (latitude >= 1.3784  && latitude <= 1.3793 && longitude >= 103.7727 && longitude <= 103.7738){
         np_checkpoint += 1
         swal("Good job!", "You have reached Makan Place!", "success");
     }
-    if (latitude >= 1.3337  && latitude <= 1.3338 && longitude >= 103.776  && longitude <= 103.7766){
+    if (latitude >= 1.3785  && latitude <= 1.3793 && longitude >= 103.7743 && longitude <= 103.7751){
         np_checkpoint += 1;
         np_string =  String(np_checkpoint);
         swal("Good Job! You have reached Lien Ying Chow Library! " + np_string + "/3" , {
@@ -266,8 +207,3 @@ localStorage.setItem("np_checkpoint",np_checkpoint);
         
 
     }
-
-    
-
-    
-

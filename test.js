@@ -1,4 +1,3 @@
-
 // get user's location: 
 sucessCallback = (position) => {
   var latitude = localStorage.setItem("latitude", position.coords.latitude);
@@ -17,7 +16,6 @@ let longitude = parseFloat(localStorage.getItem("longitude"));
 // get map: 
 let map;
 center = {lat: latitude,lng:longitude};
-
 
 
 
