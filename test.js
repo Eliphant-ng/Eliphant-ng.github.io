@@ -19,27 +19,9 @@ let map;
 center = {lat: latitude,lng:longitude};
 
 
-// pop up button
-document.getElementById("open-popup-btn").addEventListener("click",function(){
-  document.getElementsByClassName("popup")[0].classList.add("active");
-});
 
-document.getElementById("dismiss-popup-btn").addEventListener("click",function(){
-  document.getElementsByClassName("popup")[0].classList.remove("active");
-});
 
-var starCounter = 0
-function addStar(){
-  starCounter += 10;
-}
-document.getElementById("open-popup-btn").addEventListener("click",function(){
-  addStar();
-});
 
-document.getElementById("dismiss-popup-btn").addEventListener("click",function(){
-
-window.location.href="profile.html"
-});
 
 
 
