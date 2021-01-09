@@ -1,4 +1,8 @@
 //stopwatch 
+
+//Start time counter: 
+let startTime = new Date();
+
 //Define vars to hold time values
 let seconds = 0;
 let minutes = 0;
@@ -60,9 +64,8 @@ function stopWatch(){
 }
 
 
-
+// Start the timer
 function startStop(){
-
     if(status === "stopped"){
 
         //Start the stopwatch (by calling the setInterval() function)
@@ -74,23 +77,43 @@ function startStop(){
 
 }
 
-//Function to reset the stopwatch
+//Function Check if user finished the challenge and records the timing
 function reset(){
-if(status =="stopped"){
-    window.clearInterval(interval);
-    seconds = 0;
-    minutes = 0;
-    hours = 0;
-    document.getElementById("display").innerHTML = "00:00:00";
-    document.getElementById("startStop").innerHTML = "Start";
+if(np_checkpoint < 3){
+    swal("CHALLENGE INCOMPLETE!", "tsk tsk tsk dont play play ah");
 }
     else{
-
         window.clearInterval(interval);
         document.getElementById("startStop").innerHTML = "Start";
         status = "stopped";
-        localStorage.setItem("timing",timing);
-
+        let timing = new Date() - startTime;
+        console.log(timing/1000 + "seconds");
+        localStorage.setItem("timing",(timing/1000));
+        // Storing timing data
+        var firebaseConfig = {
+            apiKey: "AIzaSyAuqUON7LmCIIrvwKY1wNHDiQEx2DBAjE8",
+            authDomain: "leaderboard-dc9d0.firebaseapp.com",
+            databaseURL: "https://leaderboard-dc9d0-default-rtdb.firebaseio.com",
+            projectId: "leaderboard-dc9d0",
+            storageBucket: "leaderboard-dc9d0.appspot.com",
+            messagingSenderId: "412968994325",
+            appId: "1:412968994325:web:95e19dddd112a72e65f01c",
+            measurementId: "G-23M250XY1Z"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            
+            var myName = localStorage.getItem("name");
+            var time = localStorage.getItem("timing");
+            var database = firebase.database();
+            var ref = database.ref("scores");
+            
+            var data = {
+                "name": myName,
+                "timing": time
+            }
+            
+            ref.push(data);
     }
 
 }
@@ -112,10 +135,11 @@ console.log(error);
 
 navigator.geolocation.getCurrentPosition(sucessCallback, errorCallback);
 
-let latitude = parseFloat(localStorage.getItem("latitude"));
-let longitude = parseFloat(localStorage.getItem("longitude"));
+let latitude = 1.3334;
+let longitude = 103.7749;
 
-
+// let latitude = parseFloat(localStorage.getItem("latitude"));
+// let longitude = parseFloat(localStorage.getItem("longitude"));
 // set lat lng for 3 locations:
 
 //NP
@@ -240,11 +264,11 @@ localStorage.setItem("np_checkpoint",np_checkpoint);
     
     if (np_checkpoint >= 3){ 
         swal("Good job!", "NP MISSION COMPLETE!", "success");
-        reset();
+        
 
     }
+
     
 
-
-
+    
 

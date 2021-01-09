@@ -81,7 +81,7 @@ firebase.database().ref("messages").on("child_added", function (snapshot) {
   if(snapshot.val().message == "FindFriend"){
     //show findfriend UI
     html+= "<button class='friend' data-lat='"+ snapshot.val().lat + "' data-lng='"+ snapshot.val().lng 
-    + "'>Friend wants to send you his location</button>"
+    + "'>Where the H*ck are you?</button>"
   }else{
     html += snapshot.val().sender + ": " + snapshot.val().message;
   }
