@@ -26,9 +26,24 @@ function initMap() {
 
   // Display directions between friend and i 
   directionsDisplay = new google.maps.DirectionsRenderer({
-    map: map
+    map: map,
+    suppressMarkers: true
   });
-  calcRoute(); 
+  calcRoute();
+  new google.maps.Marker({
+    position: {lat:lat,lng:lng},
+    map,
+    icon: "png file/person icon.png",
+    animation: google.maps.Animation.DROP
+    
+  });
+  new google.maps.Marker({
+    position: {lat:friendLat,lng:friendLng},
+    map,
+    icon: "/png file/cafe star.png",
+    animation: google.maps.Animation.DROP
+    
+  });
 }
 function calcRoute() {
 
@@ -41,11 +56,16 @@ function calcRoute() {
   };
   directionsService.route(request, function(result, status) {
     if (status == google.maps.DirectionsStatus.OK) {
-
       directionsDisplay.setDirections(result);
     }
+    var leg = response.routes[0].legs[0];
+    makeMarker(leg.start_location, icons.start, "title", map);
+    makeMarker(leg.end_location, icons.end, 'title', map);
   });
 };
+
+
+
 
 
 

@@ -169,6 +169,9 @@ $('#messages').on('click','.friend',function(e){
 
   });
 
+var div = $('.form-control');
+div.scrollTop(div.get(0).scrollHeight);
+
 
 
 

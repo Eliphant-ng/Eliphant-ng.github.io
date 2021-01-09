@@ -5,7 +5,7 @@
    <!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Messaging Form </title>
+  <title>Chat box </title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
@@ -14,145 +14,149 @@
   <link rel="stylesheet" href="teststyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <style> 
   html,
   body{ 
     background: linear-gradient(rgb(246, 204, 211, 0.856), rgba(131, 53, 131, 0.856));
     width: 100%;
+    
   }
   .form-control{
-    height: 700px;
+    height: 625px;
     padding-bottom: 2%;
     background-color: rgba(98, 98, 98, 0.383);
+    overflow: auto;
   }
-  #messages{
-    list-style-type: none;
-    color: ghostwhite;
-  }
-  .friend{
-    background-color: rgba(0, 0, 0, 0);
-    color:  rgb(242, 188, 255);
-    border: none;
-    outline: none;
-    transition: 0.3s ease-in-out;
-  }
-  .friend:hover{
-    color: rgb(210, 69, 245);
-  }
-  .text{
-    background-size: auto;
-    background-color: rgba(0, 0, 0, 0.63);
-    margin-left: 0;
-    padding: 15px;
-    width:200px;
-    margin-bottom: 10px;
-    border-radius: 12px;
-  }
-  .delete{
-    background-color: rgba(60, 90, 77, 0);
-    color:  rgb(60, 224, 200);
-    border: none;
-    outline: none;
-    transition: 0.3s ease-in-out;
-  }
-  .delete:hover{
-    color: rgb(72, 133, 124);
-  }
-  .messagebox{
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", "sans-serif";
-
-}
-
-#chat-room{ 
-  background-color: rgba(175, 255, 242, 0.671) ;
-  text-align: center;
-  font-family: 'Lobster', cursive;
-  font-size: 35px;
-  color: rgb(0, 78, 61);
-}
-#message{
-  background-color: rgba(253, 253, 253, 0.616);
-  border: none;
-  outline: none;
-  padding: 5px;
-  padding-left: 10px;
-  border-radius: 15px;
-  width: 250px;
-  margin-top: 5px;
-  font-family: 'Lobster', cursive;
-}
-#send{
-  background-color: rgb(0, 78, 61);
-  color: ghostwhite;
-  border: none;
-  outline: none;
-  border-radius: 50%;
-  padding: 5px;
-  padding-left:10px;
-  padding-right:10px;
-  margin-left: 2px;
-}
-#find-friends{
-  background-color: rgb(0, 78, 61);
-  color: ghostwhite;
-  border: none;
-  outline: none;
-  border-radius: 50%;
-  padding: 5px;
-  padding-left:12px;
-  padding-right:12px;
-  margin-left: 2px;
-}
+  
 
   </style>
 
 </head>
 
 <body>
+  <header>
+      <div class="container">
+          <input type="checkbox" name="" id="check">
+          
+          <div class="logo-container">
+              <h3 class="logo">GO<span>Sweet</span></h3>
+          </div>
 
-<div class="container-sm">
-  <div class="messagebox">
-    <div id="chat-room" class="row-col">
-    <a href="home.html"><img class="tea" src="png file/cafe.png"/></a>
-      Sweet Tea
-    </div>
-    <!-- create a list -->
-    <div class="form-control">
-      <ul id="messages"></ul>
-      <tbody id="userLocationContent">             
-      </tbody>
-    </div>
-      <!-- create a form to send message -->
-      <form onsubmit="return sendMessage();">
-        <div class="row align-items-end">
-          <div class="col-xs-3">
-          <input id="message"  placeholder="  Spill the tea..."  autocomplete="off">
+          <div class="nav-btn">
+              <div class="nav-links">
+                  <ul>
+                      <li class="nav-link" style="--i: .6s">
+                          <a href="index.html">Home</a>
+                          <div class="dropdown">
+                              <ul>
+                                  <li class="dropdown-link">
+                                      <a href="settings.html">Settings</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                      <a href="leaderboard.html">Leaderboard</a>
+                                  </li>
+                                  <div class="arrow"></div>
+                              </ul>
+                          </div>
+                      </li>
+                      <li class="nav-link" style="--i: .85s">
+                          <a href="#">Bubble Tea<i class="fas fa-caret-down"></i></a>
+                          <div class="dropdown">
+                              <ul>
+                                  <li class="dropdown-link">
+                                      <a href="bubbletea.html">all</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                      <a href="#">brands</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                      <a href="#">near me</a>
+                                  </li>
+                                  <div class="arrow"></div>
+                              </ul>
+                          </div>
+                      </li>
+                      <li class="nav-link" style="--i: 1.1s">
+                          <a href="message.html">SWEET TEA<i class="fas fa-caret-down"></i></a>
+                      
+                      </li>
+                      <li class="nav-link" style="--i: 1.35s">
+                          <a href="#">SWEETVENTURE<i class="fas fa-caret-down"></i></a>
+                          <div class="dropdown">
+                              <ul>
+                                  <li class="dropdown-link">
+                                      <a href="np_challenge.html">TEAM NGEE ANN</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                      <a href="#">TEAM SP</a>
+                                  </li>
+                                  <li class="dropdown-link">
+                                      <a href="#">TEAM BUKIT PANJANG</a>
+                                  </li>
+                                  <div class="arrow"></div>
+                              </ul>
+                          </div>
+                      </li>
+                      <li class="nav-link" style="--i: 1.6s">
+                          <a href="scoreboard.html">LEADER-BOARD<i class="fas fa-caret-down"></i></a>
+                      </li>
+                  </ul>
+              </div>
+
+              <div class="log-sign" style="--i: 1.8s">
+                  <a href="login.html" class="btn transparent">Log in</a>
+              </div>
           </div>
-          <div class="col-xs-6 ">
-          <div class="send-button">
-            <button id="send"><i id="paper-plane" class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+
+          <div class="hamburger-menu-container">
+              <div class="hamburger-menu">
+                  <div></div>
+              </div>
           </div>
-        </div>
-          <div class="col-xs-6 ">
-            <button id="find-friends" onclick="find()"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-          </div>
-        </div>
       </div>
-      </form>
+  </header>
+  <main>
+    <div id="messagebox" class="animate__animated animate__zoomIn">
+      <div id="chat-room" class="row-col">
+        Sweet Tea
+      </div>
+      <!-- create a list -->
+      <div class="form-control">
+        <ul id="messages" ></ul>
+        <tbody id="userLocationContent">             
+        </tbody>
+      </div>
+        <!-- create a form to send message -->
+        <form onsubmit="return sendMessage();">
+          <div class="row align-items-end">
+            <div class="col-xs-3">
+            <input id="message"  placeholder="  Spill the tea..."  autocomplete="off">
+            </div>
+            <div class="col-xs-6 ">
+            <div class="send-button">
+              <button id="send"><i id="paper-plane" class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+            </div>
+          </div>
+            <div class="col-xs-6 ">
+              <button id="find-friends" onclick="find()"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-
-</div>
-
-
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
+      <section>
+          <div class="overlay"></div>
+      </section>
+  </main>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 
 <!-- include firebase firestore -->
@@ -183,3 +187,6 @@ crossorigin="anonymous">
 </body>
 
 </html>
+
+
+
