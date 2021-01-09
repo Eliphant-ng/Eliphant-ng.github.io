@@ -13,10 +13,11 @@ var firebaseConfig = {
     firebase.initializeApp(firebaseConfig);
     // set array of list of timings
     var timings = [];
-    var firebaseRef = firebase.database().ref("scores");
+    var names = [];
+    var firebaseRef = firebase.database().ref("scores").orderByChild("timing");
     firebaseRef.on("value", function(snapshot){
         snapshot.forEach(function(element){
-            //console.log(element.val().timing);
+            names.push(element.val().name)
             timings.push(parseFloat(element.val().timing));
             // document.querySelector("#root").innerHTML += `
             // <div>${element.val().name}:${timing}</div>`
@@ -34,7 +35,18 @@ var firebaseConfig = {
     document.getElementById("forth").innerHTML = forth;
     var fifth = timings[4]
     document.getElementById("fifth").innerHTML = fifth;
-
+    
+    // display names top 5 players: 
+    var first_name = names[0]
+    document.getElementById("firstName").innerHTML  = first_name;
+    var second_name = names[1]
+    document.getElementById("secondName").innerHTML  = second_name;
+    var third_name = names[2]
+    document.getElementById("thirdName").innerHTML  = third_name;
+    var forth_name = names[3]
+    document.getElementById("forthName").innerHTML  = forth_name;
+    var fifth_name = names[4]
+    document.getElementById("fifthName").innerHTML  = fifth_name;
 
     });
 

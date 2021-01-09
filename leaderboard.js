@@ -84,10 +84,9 @@ if(np_checkpoint < 3){
 }
     else{
         window.clearInterval(interval);
-        document.getElementById("startStop").innerHTML = "Start";
         status = "stopped";
         let timing = new Date() - startTime;
-        console.log(timing/1000 + "seconds");
+        console.log(timing/60000 + "seconds");
         localStorage.setItem("timing",(timing/1000));
         // Storing timing data
         var firebaseConfig = {
@@ -110,7 +109,7 @@ if(np_checkpoint < 3){
             
             var data = {
                 "name": myName,
-                "timing": time
+                "timing": parseFloat(time)
             }
             
             ref.push(data);

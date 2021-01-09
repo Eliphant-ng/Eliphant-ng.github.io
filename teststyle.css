@@ -587,6 +587,39 @@ h2{
   margin-bottom: 60px;
 }
 
+/* scoreboard */
+#timing{
+  margin:0%;
+}
+main{
+  background: rgb(242, 188, 255);
+}
+.titles{
+  font-size: 20px;
+  background-color: rgba(175, 255, 242, 0.671);
+  font-family: 'Lobster', cursive;
+  color: rgb(0, 78, 61);
+}
+.fifth{
+  background: rgb(206, 159, 218);
+  color: ghostwhite;
+}
+.forth{
+  background: rgb(183, 144, 194);
+  color: ghostwhite;
+}
+.third{
+  background: rgb(140, 109, 148);
+  color: ghostwhite;
+}
+.second{
+  background: rgb(109, 84, 116);
+  color: ghostwhite;
+}
+.first{
+  background: rgb(89, 69, 95);
+  color: ghostwhite;
+}
 
 
 
