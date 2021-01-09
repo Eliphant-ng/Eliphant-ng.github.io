@@ -65,10 +65,11 @@ function sendMessage() {
 firebase.database().ref("messages").on("child_added", function (snapshot) {
   var html = "";
   // give each message a unique ID
-  html += "<li id='message-" + snapshot.key + "'>";
+  
+  html += "<li class='text' id='message-" + snapshot.key + "'>" ;
   // show delete button if message is sent by me
   if (snapshot.val().sender == myName) {
-    html += "<button data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>"
+    html += "<button class='delete' data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>"
       ;
     html += "Delete";
     html += "</button>";
@@ -80,8 +81,9 @@ firebase.database().ref("messages").on("child_added", function (snapshot) {
  //use data attribute to store lat and lng
   if(snapshot.val().message == "FindFriend"){
     //show findfriend UI
-    html+= "<button class='friend' data-lat='"+ snapshot.val().lat + "' data-lng='"+ snapshot.val().lng 
-    + "'>Where the H*ck are you?</button>"
+    html+=  "<img src='png file/find friend star.png'/>" + 
+    "<button class='friend' data-lat='"+ snapshot.val().lat + "' data-lng='"+ snapshot.val().lng 
+    + "'>Miss ya buddy!</button>"
   }else{
     html += snapshot.val().sender + ": " + snapshot.val().message;
   }

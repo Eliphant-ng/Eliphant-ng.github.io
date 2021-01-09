@@ -501,65 +501,13 @@
   
 
 
-.progress{
-  background-color: #d8d8d8;
-  border-radius: 20px;
-  height: 30px;
-  width: 300px;
-}
-.progress-done{
-  color: #fff;
-  background: linear-gradient(to left, #F2709C, #FF9472);
-  box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  height: 100%;
-  width: 0px;
-  transition: 1s ease;
-}
-
-/* stopwatch css */
-#display{
-  width: 100%;
-  font-size: 72px;
-  text-align: center;
-  margin: 0px auto;
-}
-
-.stopwatch-buttons{
-  text-align: center;
-}
-
-#message{ 
-  align-items: right ;
-  color: pink;
-}
-#messages{
-  align-items: right;
-  color: green;
-
-  margin-left: 50px;
-}
 
 
 
 
-.messagebox{
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", "sans-serif";
 
-}
 
-#chat-room{ 
-  background-color: blue ;
-  text-align: center;
-  padding: 15px;
-}
+
 
 
 

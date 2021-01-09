@@ -11,12 +11,103 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
   integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
   crossorigin="anonymous">
- <link rel="stylesheet" href="teststyle.css">
+  <link rel="stylesheet" href="teststyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
   <style> 
+  html,
+  body{ 
+    background: linear-gradient(rgb(246, 204, 211, 0.856), rgba(131, 53, 131, 0.856));
+    width: 100%;
+  }
+  .form-control{
+    height: 700px;
+    padding-bottom: 2%;
+    background-color: rgba(98, 98, 98, 0.383);
+  }
+  #messages{
+    list-style-type: none;
+    color: ghostwhite;
+  }
+  .friend{
+    background-color: rgba(0, 0, 0, 0);
+    color:  rgb(242, 188, 255);
+    border: none;
+    outline: none;
+    transition: 0.3s ease-in-out;
+  }
+  .friend:hover{
+    color: rgb(210, 69, 245);
+  }
+  .text{
+    background-size: auto;
+    background-color: rgba(0, 0, 0, 0.63);
+    margin-left: 0;
+    padding: 15px;
+    width:200px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+  }
+  .delete{
+    background-color: rgba(60, 90, 77, 0);
+    color:  rgb(60, 224, 200);
+    border: none;
+    outline: none;
+    transition: 0.3s ease-in-out;
+  }
+  .delete:hover{
+    color: rgb(72, 133, 124);
+  }
+  .messagebox{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "sans-serif";
 
+}
+
+#chat-room{ 
+  background-color: rgba(175, 255, 242, 0.671) ;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 35px;
+  color: rgb(0, 78, 61);
+}
+#message{
+  background-color: rgba(253, 253, 253, 0.616);
+  border: none;
+  outline: none;
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 15px;
+  width: 250px;
+  margin-top: 5px;
+  font-family: 'Lobster', cursive;
+}
+#send{
+  background-color: rgb(0, 78, 61);
+  color: ghostwhite;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  padding: 5px;
+  padding-left:10px;
+  padding-right:10px;
+  margin-left: 2px;
+}
+#find-friends{
+  background-color: rgb(0, 78, 61);
+  color: ghostwhite;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  padding: 5px;
+  padding-left:12px;
+  padding-right:12px;
+  margin-left: 2px;
+}
 
   </style>
 
@@ -24,22 +115,34 @@
 
 <body>
 
-<div class="container">
+<div class="container-sm">
   <div class="messagebox">
-    <div id="chat-room" class="row-col">Sweet Tea</div>
+    <div id="chat-room" class="row-col">
+    <a href="home.html"><img class="tea" src="png file/cafe.png"/></a>
+      Sweet Tea
+    </div>
     <!-- create a list -->
-    <div class="messages">
+    <div class="form-control">
       <ul id="messages"></ul>
       <tbody id="userLocationContent">             
       </tbody>
     </div>
       <!-- create a form to send message -->
       <form onsubmit="return sendMessage();">
-        <input id="message" placeholder="Write something..."  autocomplete="off">
-        <div class="send-button">
-          <button id="send"><i id="paper-plane" class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+        <div class="row align-items-end">
+          <div class="col-xs-3">
+          <input id="message"  placeholder="  Spill the tea..."  autocomplete="off">
+          </div>
+          <div class="col-xs-6 ">
+          <div class="send-button">
+            <button id="send"><i id="paper-plane" class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+          </div>
         </div>
-      <input id="find-friends" type="button" value="FIND FRIENDS" onclick="find()" > 
+          <div class="col-xs-6 ">
+            <button id="find-friends" onclick="find()"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
       </form>
     </div>
   </div>
@@ -74,6 +177,8 @@ crossorigin="anonymous">
 integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" 
 crossorigin="anonymous">
 </script>
+<script src="https://fb.me/react-0.14.3.min.js"></script>
+<script src="https://fb.me/react-dom-0.14.3.min.js"></script>
 <script src="messaging.js"></script>
 </body>
 
