@@ -1,5 +1,6 @@
 function initMap() {
-
+  swal("NP Game Challenge!",
+ "Find the three hidden locations around campus! BE the FASTEST and OUTBEAT your friends! Remeber to press play to begin your challenge. Good Luck!!");
   let latitude = parseFloat(localStorage.getItem("latitude"));
   let longitude = parseFloat(localStorage.getItem("longitude"));
  

@@ -135,11 +135,11 @@ console.log(error);
 
 navigator.geolocation.getCurrentPosition(sucessCallback, errorCallback);
 
-let latitude = 1.3334;
-let longitude = 103.7749;
+// let latitude = 1.3334;
+// let longitude = 103.7749;
 
-// let latitude = parseFloat(localStorage.getItem("latitude"));
-// let longitude = parseFloat(localStorage.getItem("longitude"));
+let latitude = parseFloat(localStorage.getItem("latitude"));
+let longitude = parseFloat(localStorage.getItem("longitude"));
 // set lat lng for 3 locations:
 
 //NP
@@ -224,7 +224,7 @@ const foodgle_lng = 103.84895071503075;
 
 // NP game: 
 
-var np_checkpoint = 2;
+var np_checkpoint = 0;
 
 localStorage.setItem("np_checkpoint",np_checkpoint);
 
