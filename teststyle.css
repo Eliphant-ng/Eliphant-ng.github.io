@@ -625,11 +625,11 @@ main{
 .donut {
   animation: rotation 2s infinite linear;
   padding: 84px;
-  margin-top: 45%;
+  margin-top: 40%;
 }
 .donut-text{
   padding-top: 0%;
-  padding-left: 25px;
+  padding-left: 35px;
 }
 @keyframes rotation {
   from {
