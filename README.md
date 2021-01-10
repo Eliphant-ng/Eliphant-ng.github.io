@@ -21,7 +21,7 @@
 
 * **Anything else to make your app even more xtra?** 😛 
   What about a little bit of competition huh? 
-  GOSweet has an inbuilt game called Sweet-Venture that can be played by any Ngee Ann Polytechnic student! This game requires students to find the 3 hidden locations around campus. The faster your timing, the higher you will be placed on the leaderboard. Compete with friends to see who can top the leaderboard!
+  GOSweet has an inbuilt game called Sweet-Venture that can be played by any Ngee Ann Polytechnic student! This game requires students to find the 3 hidden locations around campus. Compete with friends for the fastest timing to see who can top the leaderboard!
   ![img of Np challenge map](wireframe/challenge%20screenshot.jpg)
   ![img of Leaderboard](wireframe/scoreboard%20screenshot.jpg)
   
@@ -47,6 +47,7 @@
 
 **External Links:** 🔗
 * [Wireframes](wireframe/XD)
+* [Demo Video](wireframe/demo%20videos)
   
 ## _**Features**_: 🌟
 * Messaging portal using firebase 
@@ -55,6 +56,7 @@
 * Find locations application using google maps local context api 
 ### **Accomplished Features:** ✔️
 * [x] Wireframe
+* [X] Demo Video
 * [x] Login page: 
 * [x] Store username and password in local storage
 * [x] Sign in function for new users
