@@ -22,8 +22,8 @@
 * **Anything else to make your app even more xtra?** 😛 
   What about a little bit of competition huh? 
   GOSweet has an inbuilt game called Sweet-Venture that can be played by any Ngee Ann Polytechnic student! This game requires students to find the 3 hidden locations around campus. The faster your timing, the higher you will be placed on the leaderboard. Compete with friends to see who can top the leaderboard!
-* ![img of Np challenge map](wireframe/challenge%20screenshot.jpg)
-* ![img of Leaderboard](wireframe/scoreboard%20screenshot.jpg)
+  ![img of Np challenge map](wireframe/challenge%20screenshot.jpg)
+  ![img of Leaderboard](wireframe/scoreboard%20screenshot.jpg)
   
 * **Target users?** 👀
   GOSweet is mainly targeted towards "youngsters"  also known as Millennials and Gen-Z as well as Ngee Ann Polytecnic students. Of course this does not mean that others are not welcomed to use GOSweet. Dont feel FOMO!! Of course all with a young heart are welcomed to join in the fun!! 
@@ -31,12 +31,12 @@
 * **Check out GoSweet here!!**👇 👇 👇 
 * [GoSweet](https://eliphant-ng.github.io/)
 ## _**Login page**_:
-* ![img of Sign in page](wireframe/login%20screenshot.jpg)
-* ![img of Sign up page](wireframe/register%20screenshot.jpg)
-* ![img of Forgot Password page](wireframe/reset%20password%20screenshot.jpg)
+  ![img of Sign in page](wireframe/login%20screenshot.jpg)
+  ![img of Sign up page](wireframe/register%20screenshot.jpg)
+  ![img of Forgot Password page](wireframe/reset%20password%20screenshot.jpg)
 ## _**Home Page**_:
-* ![img of Landing page](wireframe/home%20page%20screenshot.jpg)
-* ![img of Navigation Bar](wireframe/nav%20bar%20screenshot.jpg)
+  ![img of Landing page](wireframe/home%20page%20screenshot.jpg)
+  ![img of Navigation Bar](wireframe/nav%20bar%20screenshot.jpg)
 
 ## _**Design Process**_: 🎨
 
