@@ -170,8 +170,10 @@
    * [Store Data](https://firebase.google.com/docs/database/admin/save-data)
 6. [Animate.css](https://animate.style/)
    * Slide in and zoom in simple animations
-7. [flaviocopes](https://flaviocopes.com/rotate-image/)
+7. [Flaviocopes](https://flaviocopes.com/rotate-image/)
    * Rotating image for landing page 
+8. [Sweet Alert](https://sweetalert.js.org/guides/#installation)
+   * Pop up messages for challenge game 
   
 ## _**Testing**_: 🤔
 

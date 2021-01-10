@@ -81,7 +81,7 @@ firebase.database().ref("messages").on("child_added", function (snapshot) {
  //use data attribute to store lat and lng
   if(snapshot.val().message == "FindFriend"){
     //show findfriend UI
-    html+=  "<img src='png file/find friend star.png'/>" + 
+    html+=  "<img src='/png file/find friend star.png'/>" + 
     "<button class='friend' data-lat='"+ snapshot.val().lat + "' data-lng='"+ snapshot.val().lng 
     + "'>Miss ya buddy!</button>"
   }else{

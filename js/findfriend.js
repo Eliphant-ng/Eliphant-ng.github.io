@@ -33,7 +33,7 @@ function initMap() {
   new google.maps.Marker({
     position: {lat:lat,lng:lng},
     map,
-    icon: "png file/person icon.png",
+    icon: "/png file/person icon.png",
     animation: google.maps.Animation.DROP
     
   });

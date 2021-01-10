@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login Page</title>
-<link rel = "stylesheet" href="normalize.css" >
+<link rel = "stylesheet" href="css files/normalize.css" >
 <script src="https://kit.fontawesome.com/64d58efce2.js">
   crossorigin="anonymous"
 </script>
@@ -424,7 +424,7 @@ body, input {
             <input id="input-password" type="password" placeholder="Password" />
           </div>
           <input id="signin" type="submit" value="Login" class="btn solid" />
-          <a class="forgot" href="forgot.html">FORGOT PASSWORD?</a>
+          <a class="forgot" href="/html/forgot.html">FORGOT PASSWORD?</a>
           <div id="error"></div>
 
         </form>
@@ -511,7 +511,7 @@ body, input {
   function checker(){
     if (localStorage.getItem("checkName") === localStorage.getItem("name") && localStorage.getItem("checkPassword") === localStorage.getItem("password") ){
       console.log("true");
-      window.location.href="home.html";
+      window.location.href="/html/home.html";
 
     }
 

@@ -31,6 +31,7 @@ function initMap() {
   map.setOptions({
     center: center,
     zoom: 16,
+    icon:"/png file/star.png"
   });
 }
 
