@@ -2,35 +2,39 @@
 
 #### Oh ello there! I am Elicia and welcome to my Github Respository for GOSweet. All my code for this application will be stored here for your viewing. I be creating a front-end web application to practice my HTML, CSS, JS, JQuery and API coding. Sit back and enjoy! 😎
 
-### GOSweet 
-* **What is GOSweet?**
+### GOSweet 🍩
+* **What is GOSweet?** 😏
   Love socialzing with people? 
   Love meeting new friends? 
   Love good competition? 
   Love to know where your friends are exactly and stock them? 
 
   Well then, GOSweet is the perfect web-application for you! 
-  GOSweet is a **free** to sign up app that allows you to socialize with people all around Singapore through a large messaging portal called Sweet Tea. Interested to find out where your friends are? GOSweet will be able to help you solve that issue. With a "find friends" built-in button, you will be lead right up to your friend through a map as a guide.
+  GOSweet is a 👉**free**👈  to sign up app that allows you to socialize with people all around Singapore through a large messaging portal called Sweet Tea. Interested to find out where your friends are? GOSweet will be able to help you solve that issue. With a "find friends" built-in button, you will be lead right up to your friend through a map as a guide.
   
   ![img of Sweet Tea Messaging portal](wireframe/sweet%20tea%20screenshot.jpg)
   ![img of Find friends map](wireframe/map%20friend%20screeshot.jpg)
-* **Is that all? That quite lame... is there any other features?** 
+* **Is that all? That quite lame... is there any other features?** 😒
+  Want to try out new Restaurants or Cafes? Or are you always running low on cash and need to go to the ATM? 
+  Well GoSweet also has a SWEET-SPOTS function that allows you to find restaurants, cafes and atms near you and also shows the route to reach those destinations!
+  ![img of Sweet spots example](wireframe/sweetspots%20screenshot.jpg)
+
+* **Anything else to make your app even more xtra?** 😛 
   What about a little bit of competition huh? 
   GOSweet has an inbuilt game called Sweet-Venture that can be played by any Ngee Ann Polytechnic student! This game requires students to find the 3 hidden locations around campus. The faster your timing, the higher you will be placed on the leaderboard. Compete with friends to see who can top the leaderboard!
   ![img of Np challenge map](wireframe/challenge%20screenshot.jpg)
   ![img of Leaderboard](wireframe/scoreboard%20screenshot.jpg)
-
-* **Target users?** 
+  
+* **Target users?** 👀
   GOSweet is mainly targeted towards "youngsters"  also known as Millennials and Gen-Z as well as Ngee Ann Polytecnic students. Of course this does not mean that others are not welcomed to use GOSweet. Dont feel FOMO!! Of course all with a young heart are welcomed to join in the fun!! 
 
-* **Check out GoSweet here!!** <br>
+* **Check out GoSweet here!!**👇 👇 👇 
   [GoSweet](https://eliphant-ng.github.io/)
-<br>
-  Login page: 
+## _**Login page**_:
   ![img of Sign in page](wireframe/login%20screenshot.jpg)
   ![img of Sign up page](wireframe/register%20screenshot.jpg)
   ![img of Forgot Password page](wireframe/reset%20password%20screenshot.jpg)
-  Home Page: 
+## _**Home Page**_:
   ![img of Landing page](wireframe/home%20page%20screenshot.jpg)
   ![img of Navigation Bar](wireframe/nav%20bar%20screenshot.jpg)
 
@@ -46,8 +50,9 @@
   
 ## _**Features**_: 🌟
 * Messaging portal using firebase 
-* Find friends application using google maps api 
+* Find friends application using google maps directions api 
 * Challenge quest using google maps api 
+* Find locations application using google maps local context api 
 ### **Accomplished Features:** ✔️
 * [x] Wireframe
 * [x] Login page: 
@@ -62,6 +67,11 @@
 * [x] Clickable buttons (link to next page)
 * [x] Spinning Logo
 * [x] Css
+  
+* Find Locations pages: 
+* [x] Add google maps local context api 
+* [x] css styling 
+* [x] get user locations
   
 * Messaging page: 
 * [x] Navigation bar
@@ -108,6 +118,11 @@
 * [ ] ~~Spinning Logo~~
 * [ ] ~~Css~~
   
+* ~~Find Locations pages~~: 
+* ~~[ ] Add google maps local context api~~
+* [ ] ~~css styling~~
+* [ ] ~~get user locations~~
+  
 * ~~Messaging page~~: 
 * [ ] ~~Navigation bar~~  
 * [ ] ~~Gather user information and store in firebase~~
@@ -146,6 +161,8 @@
 4. [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
    * [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/overview)
    * Used to display map on website and find locations and routes between friends
+   * [Google Maps Local COntext API](https://developers.google.com/maps/documentation/javascript/local-context/samples/location-restriction#all)
+   * Used to display map on the website and find near-by locations of cafes, restaurants and atms
 5. [Firebase](https://firebase.google.com/)
    * [Retrive Data](https://firebase.google.com/docs/database/admin/retrieve-data)
    * [Store Data](https://firebase.google.com/docs/database/admin/save-data)
