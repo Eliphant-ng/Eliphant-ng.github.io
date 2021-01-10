@@ -15,7 +15,24 @@ let longitude = parseFloat(localStorage.getItem("longitude"));
 
 // get map: 
 let map;
-center = {lat: latitude,lng:longitude};
+
+function initMap() {
+  const center = { lat: latitude, lng: longitude };
+  const localContextMapView = new google.maps.localContext.LocalContextMapView(
+    {
+      element: document.getElementById("map"),
+      placeTypePreferences: ["restaurant"],
+      maxPlaceCount: 12,
+      directionsOptions: { origin: center },
+    }
+  );
+  map = localContextMapView.map;
+  new google.maps.Marker({ position: center, map: map });
+  map.setOptions({
+    center: center,
+    zoom: 16,
+  });
+}
 
 
 

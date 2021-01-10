@@ -156,9 +156,8 @@ console.log(error);
 
 navigator.geolocation.getCurrentPosition(sucessCallback, errorCallback);
 
-// let latitude = 1.3334;
-// let longitude = 103.7749;
 
+// Get user lat and lng 
 let latitude = parseFloat(localStorage.getItem("latitude"));
 let longitude = parseFloat(localStorage.getItem("longitude"));
 
