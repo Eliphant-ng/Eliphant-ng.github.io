@@ -25,7 +25,7 @@
 
 * **Check out GoSweet here!!** <br>
   [GoSweet](https://eliphant-ng.github.io/)
-  <br>
+
   Login page: 
   ![img of Sign in page](wireframe/login%20screenshot.jpg)
   ![img of Sign up page](wireframe/register%20screenshot.jpg)
