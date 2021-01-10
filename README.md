@@ -23,8 +23,9 @@
 * **Target users?** 
   GOSweet is mainly targeted towards "youngsters"  also known as Millennials and Gen-Z as well as Ngee Ann Polytecnic students. Of course this does not mean that others are not welcomed to use GOSweet. Dont feel FOMO!! Of course all with a young heart are welcomed to join in the fun!! 
 
-* **Check out GoSweet here!!** 
+* **Check out GoSweet here!!** <br>
   [GoSweet](https://eliphant-ng.github.io/)
+  <br>
   Login page: 
   ![img of Sign in page](wireframe/login%20screenshot.jpg)
   ![img of Sign up page](wireframe/register%20screenshot.jpg)
